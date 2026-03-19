@@ -41,7 +41,16 @@ workshop-repo/
 
 ## Setup (15 minutos)
 
-### 1. Clona el repo
+### 1. Instala GitHub CLI (si no lo tienes)
+
+```bash
+brew install gh
+gh auth login
+```
+
+Sigue las instrucciones para autenticarte con tu cuenta de GitHub. Esto es necesario para crear PRs con `/create-pr`.
+
+### 2. Clona el repo
 
 ```bash
 git clone https://github.com/danilarco/workshop-repo
@@ -57,7 +66,7 @@ npm run dev
 
 Abre http://localhost:5173 — deberias ver la pantalla del workshop. Cierra el servidor con `Ctrl+C`.
 
-### 2. Configura el MCP de Figma
+### 3. Configura el MCP de Figma
 
 ```bash
 claude mcp add --transport http figma https://mcp.figma.com/mcp
@@ -65,7 +74,7 @@ claude mcp add --transport http figma https://mcp.figma.com/mcp
 
 Luego entra a `claude`, escribe `/mcp`, selecciona `figma` y autenticate con tu cuenta de Figma en el browser. No necesitas token manual.
 
-### 3. Configura el MCP de Notion
+### 4. Configura el MCP de Notion
 
 ```bash
 claude mcp add notion -e OPENAPI_MCP_HEADERS='{"Authorization":"Bearer TOKEN_DEL_WORKSHOP","Notion-Version":"2022-06-28"}' -- npx -y @notionhq/notion-mcp-server
@@ -74,7 +83,7 @@ claude mcp add notion -e OPENAPI_MCP_HEADERS='{"Authorization":"Bearer TOKEN_DEL
 > **El token de Notion lo provee Dani en vivo** — reemplaza `TOKEN_DEL_WORKSHOP` por el token que te comparta.
 > **Importante:** El token se pasa con `-e` (variable de entorno real), no con `--env` como argumento del comando.
 
-### 4. Verifica que los MCPs estan activos
+### 5. Verifica que los MCPs estan activos
 
 ```bash
 claude mcp list
@@ -82,7 +91,7 @@ claude mcp list
 
 Deberias ver `figma` y `notion` en la lista con status activo.
 
-### 5. Crea tu branch y carpeta de trabajo
+### 6. Crea tu branch y carpeta de trabajo
 
 ```bash
 git checkout -b workshop/tu-nombre
