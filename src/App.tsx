@@ -1,14 +1,5 @@
 import React from 'react';
-
-/**
- * Workshop: Importa tu BalanceCard aqui.
- *
- * Ejemplo (reemplaza "tu-nombre" con tu carpeta):
- *
- *   import BalanceCard from '../participants/tu-nombre/BalanceCard';
- *
- * Luego renderizalo dentro del return.
- */
+import BalanceCard from '../participants/dani-test/BalanceCard';
 
 const App: React.FC = () => {
   return (
@@ -17,10 +8,15 @@ const App: React.FC = () => {
         Racional Money — Workshop
       </h2>
 
-      {/* Importa y renderiza tu BalanceCard aqui */}
-      <p style={{ color: 'var(--color-text-muted)', textAlign: 'center' }}>
-        Importa tu componente en src/App.tsx para verlo aqui
-      </p>
+      <BalanceCard
+        balance={500000}
+        currency="CLP"
+        accountName="Mi Money"
+        monthlyIncome={30000}
+        monthlyExpense={10000}
+        onAddFunds={() => alert('Agregar fondos')}
+        onSendFunds={() => alert('Enviar fondos')}
+      />
     </div>
   );
 };
