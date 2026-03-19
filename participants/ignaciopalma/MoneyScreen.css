@@ -1,0 +1,391 @@
+.money-screen {
+  --color-chart-line: #E040A0;
+  --color-chart-glow: rgba(224, 64, 160, 0.3);
+  --color-uber-green: #48BB78;
+
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  padding-bottom: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+}
+
+/* ── Back button ── */
+.money-screen__back {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-surface-elevated);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.money-screen__back svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-text-primary);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Balance section ── */
+.money-screen__label {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.money-screen__balance {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.money-screen__currency {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.money-screen__amount {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.money-screen__balance::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* ── Monthly summary ── */
+.money-screen__summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.money-screen__month {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+.money-screen__income {
+  font-size: 0.8125rem;
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.money-screen__expense {
+  font-size: 0.8125rem;
+  color: var(--color-danger);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* ── Chart ── */
+.money-screen__chart {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  margin-bottom: 8px;
+}
+
+.money-screen__chart svg {
+  width: 100%;
+  height: 100%;
+}
+
+.money-screen__chart-line {
+  fill: none;
+  stroke: var(--color-chart-line);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px var(--color-chart-glow));
+  animation: draw-line 6s ease-in-out infinite;
+}
+
+.money-screen__chart-fill {
+  fill: url(#chartGradient);
+  opacity: 0;
+  animation: fill-fade 6s ease-in-out infinite;
+}
+
+.money-screen__chart-label {
+  position: absolute;
+  left: 0;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+}
+
+.money-screen__chart-label--top {
+  top: 0;
+}
+
+.money-screen__chart-label--mid {
+  top: 45%;
+}
+
+.money-screen__chart-label--bottom {
+  bottom: 0;
+}
+
+/* ── Period pills ── */
+.money-screen__periods {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.money-screen__pill {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-text-secondary);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.money-screen__pill--active {
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text-primary);
+  animation: pill-pulse 2.5s ease-in-out infinite;
+}
+
+/* ── Movimientos header ── */
+.money-screen__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.money-screen__section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.money-screen__view-all {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 20px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* ── Transaction rows ── */
+.money-screen__transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 80px;
+}
+
+.money-screen__tx {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  opacity: 0;
+  animation: tx-slide-in 0.5s ease-out forwards;
+}
+
+.money-screen__tx:nth-child(1) { animation-delay: 0.1s; }
+.money-screen__tx:nth-child(2) { animation-delay: 0.2s; }
+.money-screen__tx:nth-child(3) { animation-delay: 0.3s; }
+.money-screen__tx:nth-child(4) { animation-delay: 0.4s; }
+.money-screen__tx:nth-child(5) { animation-delay: 0.5s; }
+.money-screen__tx:nth-child(6) { animation-delay: 0.6s; }
+
+.money-screen__tx-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-surface-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.money-screen__tx-avatar--brand {
+  background-color: var(--color-uber-green);
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.money-screen__tx-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.money-screen__tx-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.money-screen__tx-date {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+.money-screen__tx-amount {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.money-screen__tx-amount--income {
+  color: var(--color-success);
+}
+
+.money-screen__tx-amount--expense {
+  color: var(--color-text-primary);
+}
+
+/* ── Action bar ── */
+.money-screen__actions {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 8px;
+  padding: 12px 0;
+  background: linear-gradient(
+    to top,
+    var(--color-background) 70%,
+    transparent
+  );
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.money-screen__action-btn {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-elevated);
+  border: none;
+  border-radius: 24px;
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+/* ── Keyframe Animations ── */
+
+@keyframes shimmer {
+  0%, 100% {
+    left: -100%;
+  }
+  50% {
+    left: 120%;
+  }
+}
+
+@keyframes draw-line {
+  0% {
+    stroke-dashoffset: var(--path-length, 600);
+  }
+  33% {
+    stroke-dashoffset: 0;
+  }
+  66% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: var(--path-length, 600);
+  }
+}
+
+@keyframes fill-fade {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0.4;
+  }
+  66% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pill-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes tx-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
