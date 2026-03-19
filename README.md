@@ -46,7 +46,16 @@ workshop-repo/
 ```bash
 git clone https://github.com/danilarco/workshop-repo
 cd workshop-repo
+npm install
 ```
+
+Verifica que funciona:
+
+```bash
+npm run dev
+```
+
+Abre http://localhost:5173 — deberias ver la pantalla del workshop. Cierra el servidor con `Ctrl+C`.
 
 ### 2. Configura el MCP de Figma
 
@@ -107,8 +116,11 @@ Extrae los estilos, colores, tipografia y espaciados exactos.
 Con los estilos que extrajiste de Figma, implementa el componente BalanceCard
 siguiendo las especificaciones del brief en docs/brief.md.
 Stack: React + TypeScript + CSS file separado.
-Guarda los archivos en esta carpeta.
+Guarda los archivos en mi carpeta de participante.
+Luego importalo en src/App.tsx para que se vea en el browser.
 ```
+
+Verifica con `npm run dev` que tu componente se ve en http://localhost:5173.
 
 ### Etapa 3 — Documentar en Notion
 
