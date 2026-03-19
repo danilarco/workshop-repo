@@ -123,8 +123,11 @@ Verifica con `npm run dev` que tu componente se ve en http://localhost:5173.
 ### Etapa 3 — Documentar en Notion
 
 ```
-Usando el MCP de Notion, documenta el componente BalanceCard
-en la pagina del workshop. Incluye: descripcion, props, ejemplo de uso y decisiones de implementacion.
+Usando el MCP de Notion, crea una subpagina dentro de esta pagina:
+https://www.notion.so/Workshop-Claude-328307ff247d80868417ce66103fa223
+
+El titulo de la subpagina debe ser "BalanceCard — tu-nombre".
+Incluye: descripcion del componente, props, ejemplo de uso y decisiones de implementacion.
 ```
 
 ### Etapa 4 — Hacer el PR
