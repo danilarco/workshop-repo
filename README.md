@@ -82,26 +82,24 @@ claude mcp list
 
 Deberias ver `figma` y `notion` en la lista con status activo.
 
-### 5. Crea tu carpeta de trabajo
+### 5. Crea tu branch y carpeta de trabajo
 
 ```bash
+git checkout -b workshop/tu-nombre
 cp -r participants/tu-nombre-aqui participants/tu-nombre
-cd participants/tu-nombre
 ```
 
 ---
 
 ## El pipeline
 
-### Etapa 1 — Leer el diseno con Figma MCP
-
-Abre Claude Code en tu carpeta:
+Abre Claude Code **desde la raiz del repo**:
 
 ```bash
 claude
 ```
 
-Luego pide a Claude que lea el componente:
+### Etapa 1 — Leer el diseno con Figma MCP
 
 ```
 Lee el componente BalanceCard desde este link de Figma:
@@ -116,8 +114,8 @@ Extrae los estilos, colores, tipografia y espaciados exactos.
 Con los estilos que extrajiste de Figma, implementa el componente BalanceCard
 siguiendo las especificaciones del brief en docs/brief.md.
 Stack: React + TypeScript + CSS file separado.
-Guarda los archivos en mi carpeta de participante.
-Luego importalo en src/App.tsx para que se vea en el browser.
+Guarda los archivos en participants/tu-nombre/.
+Luego importa el componente en src/App.tsx y renderizalo para que se vea en el browser.
 ```
 
 Verifica con `npm run dev` que tu componente se ve en http://localhost:5173.
