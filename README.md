@@ -43,8 +43,18 @@ workshop-repo/
 
 ### 1. Instala GitHub CLI (si no lo tienes)
 
+**Mac:**
 ```bash
 brew install gh
+```
+
+**Windows:**
+```bash
+winget install --id GitHub.cli
+```
+
+Luego autenticate:
+```bash
 gh auth login
 ```
 
