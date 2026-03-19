@@ -1,0 +1,125 @@
+.transaction-list {
+  width: 375px;
+  background-color: var(--color-background);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* — Header — */
+
+.transaction-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 16px 8px;
+}
+
+.transaction-list__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  letter-spacing: 0.25px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.transaction-list__view-all {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  cursor: pointer;
+}
+
+.transaction-list__view-all:hover {
+  background-color: var(--color-surface-elevated);
+}
+
+/* — Rows — */
+
+.transaction-list__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-list__row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--color-background);
+}
+
+/* — Avatar — */
+
+.transaction-list__avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.transaction-list__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.transaction-list__avatar-initials {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-text-primary);
+}
+
+/* — Info — */
+
+.transaction-list__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.transaction-list__name {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-list__date {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+/* — Amount — */
+
+.transaction-list__amount {
+  width: 102px;
+  flex-shrink: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.transaction-list__amount--positive {
+  color: var(--color-success);
+}
+
+.transaction-list__amount--negative {
+  color: var(--color-text-primary);
+}

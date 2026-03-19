@@ -1,0 +1,157 @@
+.balance-card {
+  background-color: var(--color-surface);
+  border-radius: 16px;
+  padding: 16px;
+  width: 343px;
+}
+
+.balance-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 312px;
+}
+
+/* — Top row: account label + amount + sparkline — */
+
+.balance-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.balance-card__left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.balance-card__account-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+.balance-card__chevron {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+.balance-card__amount-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 40px;
+}
+
+.balance-card__currency {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  color: var(--color-text-secondary);
+}
+
+.balance-card__amount {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  color: var(--color-text-primary);
+}
+
+/* — Sparkline — */
+
+.balance-card__sparkline {
+  width: 87px;
+  height: 29px;
+  margin-top: 13px;
+  border-top: 2px solid #fe74f4;
+  background: linear-gradient(
+    to bottom,
+    rgba(254, 116, 244, 0.15) 0%,
+    rgba(255, 231, 255, 0) 100%
+  );
+}
+
+/* — Monthly summary — */
+
+.balance-card__monthly {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.balance-card__month {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+.balance-card__movements {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.balance-card__movement {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+.balance-card__arrow {
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* — Action buttons — */
+
+.balance-card__actions {
+  display: flex;
+  gap: 16px;
+}
+
+.balance-card__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 16px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.balance-card__btn--primary {
+  background-color: var(--color-text-primary);
+  color: #000000;
+}
+
+.balance-card__btn--primary:hover {
+  background-color: var(--color-text-secondary);
+}
+
+.balance-card__btn--secondary {
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text-primary);
+}
+
+.balance-card__btn--secondary:hover {
+  background-color: var(--color-border-strong);
+}
+
+.balance-card__btn-icon {
+  font-size: 1.125rem;
+}
