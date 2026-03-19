@@ -66,17 +66,11 @@ claude mcp add figma npx -- -y @figma/figma-developer-mcp --figma-api-key=TU_TOK
 ### 3. Configura el MCP de Notion
 
 ```bash
-claude mcp add notion npx -- -y @notionhq/notion-mcp-server
-```
-
-Luego agrega la variable de entorno al config:
-
-```bash
 claude mcp add notion npx -- -y @notionhq/notion-mcp-server \
-  --env NOTION_TOKEN=TOKEN_DEL_WORKSHOP
+  --env OPENAPI_MCP_HEADERS='{"Authorization":"Bearer TOKEN_DEL_WORKSHOP","Notion-Version":"2022-06-28"}'
 ```
 
-> **El token de Notion lo provee el speaker** — lo encontrarás en el canal de Slack del workshop o te lo pasará Dani en vivo.
+> **El token de Notion lo provee Dani en vivo** — reemplaza `TOKEN_DEL_WORKSHOP` por el token que te comparta.
 
 ### 4. Verifica que los MCPs están activos
 
