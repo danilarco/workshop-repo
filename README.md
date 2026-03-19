@@ -51,13 +51,10 @@ cd workshop-repo
 ### 2. Configura el MCP de Figma
 
 ```bash
-claude mcp add figma npx -- -y @anthropic-ai/figma-developer-mcp --figma-api-key=TU_TOKEN
+claude mcp add --transport http figma https://mcp.figma.com/mcp
 ```
 
-**Obtener tu token de Figma:**
-- Entra a figma.com → avatar → Settings → Security → Personal access tokens
-- Generate new token → copialo → pegalo en el comando de arriba
-- Cuenta gratuita de Figma es suficiente
+Luego entra a `claude`, escribe `/mcp`, selecciona `figma` y autenticate con tu cuenta de Figma en el browser. No necesitas token manual.
 
 ### 3. Configura el MCP de Notion
 
