@@ -7,8 +7,8 @@ cp -r participants/tu-nombre-aqui participants/dani
 cd participants/dani
 ```
 
-Aquí van tus archivos:
-- `TransactionCard.tsx`
-- `TransactionCard.css`
+Aqui van tus archivos:
+- `BalanceCard.tsx`
+- `BalanceCard.css`
 
-Cuando termines, Claude hará el commit y el PR desde esta carpeta con `/create-pr`.
+Cuando termines, Claude hara el commit y el PR desde esta carpeta con `/create-pr`.

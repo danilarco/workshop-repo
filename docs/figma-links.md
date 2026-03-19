@@ -1,43 +1,25 @@
 # Links de Figma — Workshop
 
-## TransactionCard
+## BalanceCard
 
-Usa estos links con el MCP de Figma para que Claude lea el componente directamente.
+Usa este link con el MCP de Figma para que Claude lea el componente directamente.
 
 ### Componente completo
 ```
-[REEMPLAZAR CON TU LINK DE FIGMA]
-→ figma.com/file/XXXXX?node-id=XXXXX
+https://www.figma.com/design/3wOxOsXjFsPqLz4wXxwH7E/Sin-titulo?node-id=0-1
 ```
 
-**Cómo obtener el link correcto:**
-1. Abre el archivo de Figma de Racional Money
-2. Selecciona el componente `TransactionCard`
-3. Click derecho → "Copy link to selection"
-4. Pega ese link aquí antes del workshop
-
-### Cómo usarlo en Claude
+### Como usarlo en Claude
 
 ```
-Lee el componente TransactionCard desde este link de Figma:
-[pega el link aquí]
+Lee el componente BalanceCard desde este link de Figma:
+https://www.figma.com/design/3wOxOsXjFsPqLz4wXxwH7E/Sin-titulo?node-id=0-1
 
-Extrae: colores exactos, tipografía, espaciados, radios de borde y cualquier
+Extrae: colores exactos, tipografia, espaciados, radios de borde y cualquier
 token del design system que uses en el componente.
 ```
 
 ---
 
-## Componente de referencia — BalanceCard
-
-Para que veas cómo se ve el output de Figma MCP en acción, este es el link
-del componente ya implementado en `components/example/`:
-
-```
-[REEMPLAZAR CON LINK DE BALANCECARD EN FIGMA]
-```
-
----
-
 > **Nota:** Si el MCP de Figma no puede leer el componente (por permisos del archivo),
-> pídele a Dani que comparta el link del frame específico con vista pública activada.
+> pidele a Dani que comparta el link del frame especifico con vista publica activada.
